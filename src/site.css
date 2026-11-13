@@ -1,0 +1,30 @@
+/* site.css: styles for every page. Loaded from the site-wide <head>. */
+
+/* Header */
+@media (min-width: 992px) {
+  .nav-link.w--current { border-bottom-color: var(--color--magenta-500, #d9366f); }
+}
+.header-inner::before, .header-inner::after { display: none; }
+
+/* Logo marquee, testimonial rail, FAQ accordion */
+@keyframes fd-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee{-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.marquee-track{animation:fd-marquee 60s linear infinite}
+.marquee-logo{height:36px;width:auto;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.7;mix-blend-mode:multiply;transition:filter .2s,opacity .2s}
+.marquee-logo:hover{filter:none;opacity:1}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.quote-rail{scroll-snap-type:x mandatory;scrollbar-width:none}
+.quote-rail::-webkit-scrollbar{display:none}
+.quote-rail>.quote{scroll-snap-align:start}
+.faq-item{gap:0!important;padding:0!important}
+.faq-q{position:relative;cursor:pointer;padding:22px 44px 22px 0;user-select:none}
+.faq-q:after{content:"";position:absolute;right:6px;top:50%;width:10px;height:10px;border-right:2px solid #1a1620;border-bottom:2px solid #1a1620;transform:translateY(-75%) rotate(45deg);transition:transform .25s}
+.faq-item.is-open .faq-q:after{transform:translateY(-25%) rotate(-135deg)}
+.faq-q:focus-visible{outline:2px solid #d9366f;outline-offset:4px}
+.faq-a{overflow:hidden;max-height:0;transition:max-height .3s ease,padding .3s ease}
+.faq-item.is-open .faq-a{padding-bottom:22px}
+@media (max-width:479px){.marquee-logo{height:28px;max-width:120px}}
+@media (prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+/* Accounting & tax: wavy underline on the rotating hero word */
+.rot-word{display:inline-block!important;width:auto!important;text-decoration:none!important;white-space:nowrap;padding-bottom:12px;background-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 300 16%27 preserveAspectRatio=%27none%27%3E%3Cpath d=%27M2 10 C 80 4, 200 14, 298 6%27 fill=%27none%27 stroke=%27%23d9366f%27 stroke-width=%273.5%27 stroke-linecap=%27round%27 vector-effect=%27non-scaling-stroke%27/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left bottom;background-size:100% 14px}
