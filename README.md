@@ -7,8 +7,8 @@ instead of being pasted into Webflow's custom-code boxes.
 | File | What it does | Where it loads |
 |---|---|---|
 | `src/site.css` | Header tweaks, logo marquee, testimonial rail, FAQ accordion, rotating-word underline | Every page (site `<head>`) |
-| `src/site.js` | FAQ accordion, auto-advancing testimonial rail and its arrows | Every page (site footer) |
-| `src/accounting.js` | Rotating hero word, pre-flight checklist, booking check before Cal.com | Accounting & tax page only |
+| `src/site.js` | FAQ accordion, auto-advancing testimonial rail and its arrows, booking check before Cal.com | Every page (site footer) |
+| `src/accounting.js` | Rotating hero word, pre-flight checklist | Accounting & tax page only |
 
 Search data (JSON-LD), SEO titles and descriptions stay in Webflow: they are page content, not code.
 
@@ -54,8 +54,12 @@ while a new tag is live immediately.
   Renaming those classes in Webflow breaks the matching script, so change both together.
 - Custom code doesn't run inside the Webflow Designer. Test on the published site.
 
-## Booking check (accounting.js)
+## Booking check (site.js)
 
-On the Accounting & tax page, every link to `cal.com/vipulj` opens a one-question check first:
-"Do you own or run a business?" **Yes** unlocks the Cal.com link; **No** keeps it disabled and
-points to CRA's free tax clinics. It needs the hidden `book-gate` section on that page.
+On any page that has the hidden `book-gate` section, every link to `cal.com/vipulj` opens a
+one-question check first: "Do you own or run a business?" **Yes** unlocks the Cal.com link;
+**No** keeps it disabled with a short explanation.
+
+To add it to a page: drop the **Booking check** component (the `book-gate` section) anywhere on
+the page and make sure its booking links point to `https://cal.com/vipulj/30min`. Nothing else.
+Pages without the component keep their links going straight to Cal.com.
