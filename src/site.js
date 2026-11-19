@@ -32,3 +32,7 @@ document.addEventListener("click",function(e){var b=e.target.closest("[data-rail
   document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&g.style.display==="flex") shut(); });
   setGo(false);
 })();
+
+/* Home: "Why one firm" venn diagram toggle and auto-play (section class why-one). Stops after a click; off for reduced motion. */
+function fdVenn(){var rm=matchMedia("(prefers-reduced-motion: reduce)").matches;document.querySelectorAll(".why-one").forEach(function(s){var two=s.querySelector(".venn-btn-two"),one=s.querySelector(".venn-btn-one"),st=s.querySelector(".venn-stage"),manual=false;if(!two||!one)return;if(st){st.setAttribute("role","img");st.setAttribute("aria-label","Venn diagram. Accounting and tax, for every client: bookkeeping, payroll, HST, year-end statements, corporate tax. SR&ED, if you do R&D: technical report, claim, CRA review. Shaped by both: how you pay yourself, grants and funding, contractors versus staff, and when you file.");}s.querySelector(".venn-toggle").setAttribute("role","group");function set(m){s.classList.toggle("is-one",m);two.setAttribute("aria-pressed",m?"false":"true");one.setAttribute("aria-pressed",m?"true":"false");}[two,one].forEach(function(b){b.setAttribute("role","button");b.addEventListener("click",function(e){e.preventDefault();manual=true;set(b===one);});});set(false);if(!rm)setInterval(function(){if(!manual&&!document.hidden)set(!s.classList.contains("is-one"));},5200);});}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",fdVenn);else fdVenn();
