@@ -28,3 +28,29 @@
 
 /* Accounting & tax: wavy underline on the rotating hero word */
 .rot-word{display:inline-block!important;width:auto!important;text-decoration:none!important;white-space:nowrap;padding-bottom:12px;background-image:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 300 16%27 preserveAspectRatio=%27none%27%3E%3Cpath d=%27M2 10 C 80 4, 200 14, 298 6%27 fill=%27none%27 stroke=%27%23d9366f%27 stroke-width=%273.5%27 stroke-linecap=%27round%27 vector-effect=%27non-scaling-stroke%27/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left bottom;background-size:100% 14px}
+
+/* Home: "Why one firm" Venn diagram (section class why-one). Two firms / One firm states; the footer script toggles .is-one */
+.why-one .venn-wrap{container-type:inline-size}
+.why-one .venn-stage{height:46cqw}
+.why-one .venn-a,.why-one .venn-lens{width:44cqw}
+.why-one .venn-b{width:34cqw}
+.why-one .venn-txt-a{width:19cqw}.why-one .venn-txt-b{width:14cqw}.why-one .venn-txt-lens{width:16.5cqw}.why-one .venn-one-txt{width:30cqw}.why-one .venn-badge-txt{width:13cqw;top:calc(50% + 15cqw)}
+.why-one .venn-title{font-size:clamp(17px,2.1cqw,24px)}.why-one .venn-list{font-size:clamp(12px,1.3cqw,15px)}.why-one .venn-list-lens{font-size:clamp(12px,1.32cqw,15px)}
+.why-one .venn-one-title{font-size:clamp(26px,3.7cqw,44px)}.why-one .venn-one-list{font-size:clamp(13px,1.35cqw,16px)}.why-one .venn-badge-title{font-size:clamp(17px,2cqw,24px)}.why-one .venn-badge-sub{font-size:clamp(11px,1.2cqw,14px)}
+.why-one .venn-line{display:block}
+.why-one .venn-a{transition:background-color .7s ease .3s}
+.why-one .venn-b{transition:left 1.1s cubic-bezier(.65,0,.25,1) .3s,top 1.1s cubic-bezier(.65,0,.25,1) .3s,width 1.1s cubic-bezier(.65,0,.25,1) .3s,background-color .5s ease .3s,box-shadow .4s ease .3s}
+.why-one .venn-lens{transition:opacity .3s ease .9s}
+.why-one .venn-txt-a,.why-one .venn-txt-b,.why-one .venn-txt-lens{transition:opacity .3s ease 1.4s}
+.why-one .venn-one-txt,.why-one .venn-badge-txt{opacity:0;transform:translate(-50%,-50%) translateY(8px);transition:opacity .4s ease,transform .5s ease}
+.why-one.is-one .venn-a{background-color:#1a1620;transition-delay:.7s}
+.why-one.is-one .venn-b{left:55%;top:calc(50% + 15cqw);width:16cqw;background-color:#f0508a;box-shadow:0 0 0 6px #ffffff;transition:left 1.1s cubic-bezier(.65,0,.25,1) .3s,top 1.1s cubic-bezier(.65,0,.25,1) .3s,width 1.1s cubic-bezier(.65,0,.25,1) .3s,background-color .5s ease .9s,box-shadow .4s ease .9s}
+.why-one.is-one .venn-lens{opacity:0;transition-delay:.1s}
+.why-one.is-one .venn-txt-a,.why-one.is-one .venn-txt-b,.why-one.is-one .venn-txt-lens{opacity:0;transition-delay:0s}
+.why-one.is-one .venn-one-txt{opacity:1;transform:translate(-50%,-50%);transition-delay:1.5s}
+.why-one.is-one .venn-badge-txt{opacity:1;transform:translate(-50%,-50%);transition-delay:1.75s}
+.why-one .venn-btn{cursor:pointer;background:transparent}
+.why-one .venn-btn[aria-pressed="true"]{background:#ffffff;box-shadow:0 0 0 1px #dcd8dd}
+.why-one .venn-btn:focus-visible{outline:2px solid #d9366f;outline-offset:2px}
+@media (max-width:767px){.why-one .venn-stage{min-height:0}.why-one .venn-list,.why-one .venn-list-lens,.why-one .venn-one-list,.why-one .venn-badge-sub{display:none}.why-one .venn-chips{display:flex!important}.why-one .venn-title{font-size:14px}.why-one .venn-eyebrow,.why-one .venn-eyebrow-pink,.why-one .venn-eyebrow-lens{font-size:8px;letter-spacing:.16em}.why-one .venn-one-title{font-size:18px}.why-one .venn-badge-title{font-size:12px}}
+@media (prefers-reduced-motion:reduce){.why-one *{transition:none!important}}
