@@ -61,3 +61,11 @@
 .why-one .venn-btn{background-color:transparent;box-shadow:none}
 .why-one .venn-btn[aria-pressed="true"]{background-color:#ffffff;box-shadow:0 0 0 1px #dcd8dd}
 .why-one .venn-one-txt{top:calc(50% - 3cqw);width:36cqw}
+
+/* Accounting & tax page, revision 3: call planner, stats, short answers, calendar, quotes */
+.pf-item{cursor:pointer}
+.pf-item:focus-visible,.acct-check-btn:focus-visible{outline:2px solid #d9366f;outline-offset:2px}
+.acct-cal-row{min-width:860px}
+.acct-cal{overflow-x:auto}
+@media (max-width:991px){.acct-stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}.acct-answers,.acct-quotes{grid-template-columns:1fr!important}}
+@media (max-width:479px){.acct-stats{grid-template-columns:1fr!important}.acct-feature{gap:12px!important}.acct-feature-mark{font-size:72px!important}.acct-feature-text{font-size:28px!important}.acct-note{display:none!important}}
